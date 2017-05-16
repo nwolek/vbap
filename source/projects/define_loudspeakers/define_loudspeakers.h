@@ -7,7 +7,7 @@ Unversity of California at Berkeley
 
 See copyright in file with name COPYRIGHT  */
 
-#include "vbap.h"
+#include "../vbap/vbap.h"
 
 static t_class *def_ls_class;		// required global pointer to this class
 void def_ls_bang(t_def_ls *x);

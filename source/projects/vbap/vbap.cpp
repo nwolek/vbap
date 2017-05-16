@@ -37,7 +37,7 @@ static t_class *vbap_class;		// required global pointer to this class
 /*****************************************************
 	 INCLUDE ALL define_loudspeakers functions directly into VBAP
 ******************************************************/
-#include "../define_loudspeakers/define_loudspeakers.c"
+#include "../define_loudspeakers/define_loudspeakers.cpp"
 
 /*****************************************************
 	 Max Object Assist

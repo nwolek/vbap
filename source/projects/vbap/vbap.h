@@ -2,7 +2,9 @@
 #define VBAP_H
 
 #include <math.h>
-#include "ext.h"  				
+#include "c74_max.h"
+
+using namespace c74::max;
 
 #ifdef WIN32
 	// don't know where it is in win32, so add it here
