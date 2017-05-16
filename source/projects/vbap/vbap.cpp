@@ -100,8 +100,8 @@ int C74_EXPORT main(void)
     class_register(CLASS_BOX, c); // register the class w max
     vbap_class = c;
     
-	post(VBAP_VERSION);
-    post(JAMOMA_UPDATE);
+	//post(VBAP_VERSION);
+    //post(JAMOMA_UPDATE);
     
     return 0;
     
@@ -543,7 +543,7 @@ void vbap_bang(t_vbap *x)
 		outlet_float(x->x_outlet4, x->x_gain);
 	}
 	else
-		error("vbap: Configure loudspeakers first!");
+		object_error((t_object*)x, "vbap: Configure loudspeakers first!");
 
 	freebytes(final_gs, x->x_ls_amount * sizeof(float)); // bug fix added 9/00
 }
@@ -559,21 +559,21 @@ void vbap_matrix(t_vbap *x, t_symbol *s, int ac, t_atom *av)
 		int d = 0;
  		if(av[datapointer].a_type == A_LONG) d = av[datapointer++].a_w.w_long;
 		else if(av[datapointer].a_type == A_FLOAT) d = (long)av[datapointer++].a_w.w_float;
-		else { error("vbap: Dimension NaN"); x->x_lsset_available=0; return; }
+		else { object_error((t_object*)x, "vbap: Dimension NaN"); x->x_lsset_available=0; return; }
 
-		if (d!=2 && d!=3) { error("vbap %s: Dimension can be only 2 or 3",s->s_name); x->x_lsset_available=0; return; }
+		if (d!=2 && d!=3) { object_error((t_object*)x, "vbap %s: Dimension can be only 2 or 3",s->s_name); x->x_lsset_available=0; return; }
 
 		x->x_dimension = d;
 		x->x_lsset_available=1;
 	}
- 	else { error("vbap %s: bad empty parameter list",s->s_name); x->x_lsset_available=0; return; }
+ 	else { object_error((t_object*)x, "vbap %s: bad empty parameter list",s->s_name); x->x_lsset_available=0; return; }
 
 	if(ac>1) 
 	{
 		long a = 0;
  		if(av[datapointer].a_type == A_LONG) a = av[datapointer++].a_w.w_long;
 		else if(av[datapointer].a_type == A_FLOAT) a = (long) av[datapointer++].a_w.w_float;
-		else { error("vbap: ls_amount NaN");  x->x_lsset_available=0; return; }
+		else { object_error((t_object*)x, "vbap: ls_amount NaN");  x->x_lsset_available=0; return; }
 
 		x->x_ls_amount = a;
 	}
@@ -581,7 +581,7 @@ void vbap_matrix(t_vbap *x, t_symbol *s, int ac, t_atom *av)
 	long counter = (ac - 2) / ((x->x_dimension * x->x_dimension*2) + x->x_dimension);
  	x->x_lsset_amount=counter;
 
- 	if(counter==0) { error("vbap %s: not enough parameters",s->s_name); x->x_lsset_available=0; return; }
+ 	if(counter==0) { object_error((t_object*)x, "vbap %s: not enough parameters",s->s_name); x->x_lsset_available=0; return; }
  	
 	long setpointer=0;
 	long i;
@@ -594,7 +594,7 @@ void vbap_matrix(t_vbap *x, t_symbol *s, int ac, t_atom *av)
 			{
  				 x->x_lsset[setpointer][i]=av[datapointer++].a_w.w_long;
  			}
- 			else { error("vbap %s: param %d is not an int",s->s_name,datapointer); x->x_lsset_available=0; return; }
+ 			else { object_error((t_object*)x, "vbap %s: param %d is not an int",s->s_name,datapointer); x->x_lsset_available=0; return; }
  		}	
  		for(i=0; i < x->x_dimension*x->x_dimension; i++)
 		{
@@ -602,7 +602,7 @@ void vbap_matrix(t_vbap *x, t_symbol *s, int ac, t_atom *av)
 			{
  				x->x_set_inv_matx[setpointer][i]=av[datapointer++].a_w.w_float;
  			}
- 			else { error("vbap %s: param %d is not a float",s->s_name,datapointer); x->x_lsset_available=0; return; }
+ 			else { object_error((t_object*)x, "vbap %s: param %d is not a float",s->s_name,datapointer); x->x_lsset_available=0; return; }
  		}
  		
  		for(i=0; i < x->x_dimension*x->x_dimension; i++)
@@ -611,11 +611,11 @@ void vbap_matrix(t_vbap *x, t_symbol *s, int ac, t_atom *av)
 			{
  				x->x_set_matx[setpointer][i]=av[datapointer++].a_w.w_float;
  			}
- 			else { error("vbap %s: param %d is not a float",s->s_name,datapointer); x->x_lsset_available=0; return; }
+ 			else { object_error((t_object*)x, "vbap %s: param %d is not a float",s->s_name,datapointer); x->x_lsset_available=0; return; }
  			
  		}
  	
  		setpointer++;
 	}
-	if (_enable_trace) post("vbap: Loudspeaker setup configured!");
+	if (_enable_trace) object_post((t_object*)x, "vbap: Loudspeaker setup configured!");
 }

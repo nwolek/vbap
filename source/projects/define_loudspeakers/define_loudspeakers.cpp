@@ -26,8 +26,8 @@ int C74_EXPORT main(void)
     class_register(CLASS_BOX, c); // register the class w max
     def_ls_class = c;
     
-	post(DFLS_VERSION);
-    post(JAMOMA_UPDATE);
+	//post(DFLS_VERSION);
+    //post(JAMOMA_UPDATE);
     
     return 0;
 }
@@ -40,7 +40,7 @@ void def_ls_bang(t_def_ls *x)						/* x = reference to this instance of the obje
 	{
 		if(x->x_def_ls_amount < x->x_def_ls_dimension)
 		{
-			error("define-loudspeakers: Too few loudspeakers!");
+			object_error((t_object*)x, "define-loudspeakers: Too few loudspeakers!");
 			return;
 		} 
 		else 
@@ -56,19 +56,19 @@ void def_ls_bang(t_def_ls *x)						/* x = reference to this instance of the obje
 			}
 		  else 
 			{
-		  	error("define-loudspeakers: Error in loudspeaker direction data");
-		  	error("dimension azimuth1 [elevation1] azimuth2 [elevation2]...");
-		  	error("dimension == 2 for horizontal ls arrays");
-		  	error("dimension == 3 for 3-D ls arrays (speakers also upward and/or downward ");
+		  	object_error((t_object*)x, "define-loudspeakers: Error in loudspeaker direction data");
+		  	object_error((t_object*)x, "dimension azimuth1 [elevation1] azimuth2 [elevation2]...");
+		  	object_error((t_object*)x, "dimension == 2 for horizontal ls arrays");
+		  	object_error((t_object*)x, "dimension == 3 for 3-D ls arrays (speakers also upward and/or downward ");
 		  }
 		}
 	} 
 	else
 	{
-		error("define-loudspeakers: Error in loudspeaker direction data");
-		error("dimension azimuth1 [elevation1] azimuth2 [elevation2]...");
-		error("dimension == 2 for horizontal ls arrays");
-		error("dimension == 3 for 3-D ls arrays (speakers also upward and/or downward ");
+		object_error((t_object*)x, "define-loudspeakers: Error in loudspeaker direction data");
+		object_error((t_object*)x, "dimension azimuth1 [elevation1] azimuth2 [elevation2]...");
+		object_error((t_object*)x, "dimension == 2 for horizontal ls arrays");
+		object_error((t_object*)x, "dimension == 3 for 3-D ls arrays (speakers also upward and/or downward ");
 	}
 }
 
@@ -87,13 +87,13 @@ void def_ls_read_triplets(t_def_ls *x, t_symbol *s, int ac, t_atom *av)
 	t_ls_set *trip_ptr,  *tmp_ptr, *prev;
 	if(x->x_ls_read == 0)
 	{
-		error("define_loudspeakers: Define loudspeaker directions first!");
+		object_error((t_object*)x, "define_loudspeakers: Define loudspeaker directions first!");
 		return;
 	}
 	
 	if(x->x_def_ls_dimension == 2)
 	{
-		error("define_loudspeakers: Can't specify loudspeaker triplets in 2-D setup!");
+		object_error((t_object*)x, "define_loudspeakers: Can't specify loudspeaker triplets in 2-D setup!");
 		return;
 	}
 		
@@ -192,7 +192,7 @@ void initContent_ls_directions(t_def_ls *x,int ac,t_atom*av)
 	long d = 0;
 	if (av[0].a_type == A_LONG) d = av[0].a_w.w_long;
 	else if(av[0].a_type == A_FLOAT) d = (long)av[0].a_w.w_float;
-	else { error("define-loudspeakers: dimension NaN"); return; }
+	else { object_error((t_object*)x, "define-loudspeakers: dimension NaN"); return; }
 
 	if (d==2 || d==3)
 	{
@@ -202,7 +202,7 @@ void initContent_ls_directions(t_def_ls *x,int ac,t_atom*av)
 	else
 	{
 		x->x_def_ls_dimension= 0;
-		error("define-loudspeakers: Dimension has to be 2 or 3!");
+		object_error((t_object*)x, "define-loudspeakers: Dimension has to be 2 or 3!");
 		return;
 	}
 		
@@ -215,7 +215,7 @@ void initContent_ls_directions(t_def_ls *x,int ac,t_atom*av)
 		float azi = 0;
 		if(av[pointer].a_type == A_LONG) azi = (float) av[pointer].a_w.w_long;
 		else if(av[pointer].a_type == A_FLOAT) azi = av[pointer].a_w.w_float;
-		else { error("define-loudspeakers: direction angle #%d NaN",i+1); x->x_ls_read = 0; return; }
+		else { object_error((t_object*)x, "define-loudspeakers: direction angle #%d NaN",i+1); x->x_ls_read = 0; return; }
 
 		x->x_ls[i].azi = azi;
 		
@@ -226,7 +226,7 @@ void initContent_ls_directions(t_def_ls *x,int ac,t_atom*av)
 		{  // 3-D 
 			if(av[pointer].a_type == A_LONG) ele = (float) av[pointer].a_w.w_long;
 			else if(av[pointer].a_type == A_FLOAT) ele = av[pointer].a_w.w_float;
-			else { error("define-loudspeakers: elevation #%d NaN",i+1);  x->x_ls_read = 0; return; }
+			else { object_error((t_object*)x, "define-loudspeakers: elevation #%d NaN",i+1);  x->x_ls_read = 0; return; }
 
 			pointer++;
 		} 
@@ -270,7 +270,7 @@ void choose_ls_triplets(t_def_ls *x)
   t_ls_set *trip_ptr, *prev, *tmp_ptr;
   int ls_amount = x->x_def_ls_amount;
   t_ls *lss = x->x_ls;
-  if (ls_amount == 0) { post("define-loudspeakers: Number of loudspeakers is zero"); return; }
+  if (ls_amount == 0) { object_post((t_object*)x, "define-loudspeakers: Number of loudspeakers is zero"); return; }
  
   for(i=0;i<ls_amount;i++)
     for(j=i+1;j<ls_amount;j++)
@@ -582,7 +582,7 @@ void  calculate_3x3_matrixes(t_def_ls *x)
   
   if (tr_ptr == NULL)
 	{
-    error("define-loudspeakers: Not valid 3-D configuration\n");
+    object_error((t_object*)x, "define-loudspeakers: Not valid 3-D configuration\n");
     return;
   }
 	
