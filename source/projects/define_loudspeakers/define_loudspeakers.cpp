@@ -103,7 +103,7 @@ void def_ls_read_triplets(t_def_ls *x, t_symbol *s, int ac, t_atom *av)
 	{
 		tmp_ptr = trip_ptr;
 		trip_ptr = trip_ptr->next;
-		freebytes(tmp_ptr, sizeof (struct t_ls_set));
+		sysmem_freeptr(tmp_ptr);
 	}
 	x->x_ls_set = NULL;
 	
@@ -144,7 +144,7 @@ void def_ls_read_directions(t_def_ls *x, t_symbol *s, int ac, t_atom *av)
 		{ // remove old matrices
 		 t_ls_set* tmp_ptr = trip_ptr;
 		 trip_ptr = trip_ptr->next;
-		 freebytes(tmp_ptr, sizeof (struct t_ls_set));
+		 sysmem_freeptr(tmp_ptr);
 		}
 	}
 	x->x_ls_set = NULL;
@@ -365,14 +365,14 @@ void choose_ls_triplets(t_def_ls *x)
         prev->next = trip_ptr->next;
         tmp_ptr = trip_ptr;
         trip_ptr = trip_ptr->next;
-        freebytes(tmp_ptr, sizeof (struct t_ls_set));
+        sysmem_freeptr(tmp_ptr);
       } 
 			else 
 			{
         x->x_ls_set = trip_ptr->next;
         tmp_ptr = trip_ptr;
         trip_ptr = trip_ptr->next;
-        freebytes(tmp_ptr, sizeof (struct t_ls_set));
+        sysmem_freeptr(tmp_ptr);
       }
     } 
 		else 
@@ -446,7 +446,7 @@ void add_ldsp_triplet(int i, int j, int k, t_def_ls *x)
     prev = trip_ptr;
     trip_ptr = trip_ptr->next;
   }
-  trip_ptr = (struct t_ls_set*) getbytes (sizeof (struct t_ls_set));
+  trip_ptr = (struct t_ls_set*) sysmem_newptr (sizeof (struct t_ls_set));
   if(prev == NULL)
     x->x_ls_set = trip_ptr;
   else 
@@ -594,7 +594,7 @@ void  calculate_3x3_matrixes(t_def_ls *x)
   }
   tr_ptr = x->x_ls_set;
   list_length= triplet_amount * 21 + 3;
-  at= (t_atom *) getbytes(list_length*sizeof(t_atom));
+  at= (t_atom *) sysmem_newptr(list_length*sizeof(t_atom));
   
   atom_setlong(&at[0], x->x_def_ls_dimension);
   atom_setlong(&at[1], x->x_def_ls_amount);
@@ -642,7 +642,7 @@ void  calculate_3x3_matrixes(t_def_ls *x)
   }
 	sendLoudspeakerMatrices(x,list_length, at);
 //  outlet_anything(x->x_outlet0, gensym("loudspeaker-matrices"), list_length, at);
-  freebytes(at, list_length*sizeof(t_atom));
+  sysmem_freeptr(at);
 }
 
 
@@ -701,7 +701,7 @@ void choose_ls_tuplets(t_def_ls *x)
   
   // Output
   list_length= amount * 10  + 2;
-  at= (t_atom *) getbytes(list_length*sizeof(t_atom));
+  at= (t_atom *) sysmem_newptr (list_length*sizeof(t_atom));
   
   atom_setlong(&at[0], x->x_def_ls_dimension);
   atom_setlong(&at[1], x->x_def_ls_amount);
@@ -739,7 +739,7 @@ void choose_ls_tuplets(t_def_ls *x)
   }
 	sendLoudspeakerMatrices(x,list_length, at);
   //outlet_anything(x->x_outlet0, gensym("loudspeaker-matrices"), list_length, at);
-  freebytes(at, list_length*sizeof(t_atom));
+  sysmem_freeptr(at);
 }
 
 void sort_2D_lss(t_ls lss[MAX_LS_AMOUNT], int sorted_lss[MAX_LS_AMOUNT], 

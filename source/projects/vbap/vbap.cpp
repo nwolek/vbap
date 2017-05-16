@@ -516,7 +516,7 @@ void vbap_bang(t_vbap *x)
 	float g[3];
 	long ls[3];
 	long i;
-	float *final_gs = (float *) getbytes(x->x_ls_amount * sizeof(float));
+	float *final_gs = (float *) sysmem_newptr (x->x_ls_amount * sizeof(float));
 
 	if(x->x_lsset_available ==1)
 	{
@@ -545,7 +545,7 @@ void vbap_bang(t_vbap *x)
 	else
 		object_error((t_object*)x, "vbap: Configure loudspeakers first!");
 
-	freebytes(final_gs, x->x_ls_amount * sizeof(float)); // bug fix added 9/00
+	sysmem_freeptr(final_gs); // bug fix added 9/00
 }
 
 /*--------------------------------------------------------------------------*/
