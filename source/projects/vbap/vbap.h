@@ -1,3 +1,18 @@
+/* 
+ 
+ VBAP :: vbap.h
+ Legacy objects for Vector Based Amplitude Panning in Max.
+
+ Original code:
+ Copyright 1998-2006 by Ville Pulkki.
+ 
+ Updates for 64-bit Max compatibility:
+ Copyright 2017 by Nathan Wolek.
+ 
+ License: https://creativecommons.org/licenses/by-sa/4.0/
+ 
+ */
+
 #ifndef VBAP_H
 #define VBAP_H
 

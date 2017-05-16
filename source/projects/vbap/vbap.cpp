@@ -1,11 +1,17 @@
-/* vbap.c vers 1.00b1 for ------  > xmax4.2
+/* 
+ 
+ VBAP :: vbap.cpp
+ Legacy objects for Vector Based Amplitude Panning in Max.
 
-written by Ville Pulkki 1999-2003
-Helsinki University of Technology 
-and 
-Unversity of California at Berkeley
-
-See copyright in file with name COPYRIGHT  */
+ Original code:
+ Copyright 1998-2006 by Ville Pulkki.
+ 
+ Updates for 64-bit Max compatibility:
+ Copyright 2017 by Nathan Wolek.
+ 
+ License: https://creativecommons.org/licenses/by-sa/4.0/
+ 
+ */
 
 // Indicate that we are within VBAP object (specific to include define_loudspeakers content within vbap)
 #define VBAP_OBJECT
