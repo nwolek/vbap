@@ -44,30 +44,28 @@ static t_class *vbap_class;		// required global pointer to this class
 ******************************************************/
 void vbap_assist(t_vbap *x, void *b, long m, long a, char *s)
 {
-	char*mess = "unknown";
 	if (m == ASSIST_INLET)
 	{
 		switch(a)
 		{
-			case 0 : mess = "bang to calc and output vbap gains. loudspeakers definition"; break;
-			case 1 : mess = "panning angle azimuth"; break;
-			case 2 : mess = "panning angle elevation"; break;
-			case 3 : mess = "spread amount"; break;
-			case 4 : mess = "gain control"; break;
+			case 0 : strcpy(s,"bang to calc and output vbap gains. loudspeakers definition"); break;
+			case 1 : strcpy(s,"panning angle azimuth"); break;
+			case 2 : strcpy(s,"panning angle elevation"); break;
+			case 3 : strcpy(s,"spread amount"); break;
+			case 4 : strcpy(s,"gain control"); break;
 		}
 	}
 	else
 	{
 		switch(a)
 		{
-			case 0 : mess = "vbap gains"; break;
-			case 1 : mess = "panning angle azimuth"; break;
-			case 2 : mess = "panning angle elevation"; break;
-			case 3 : mess = "spread amount"; break;
-			case 4 : mess = "gain control"; break;
+			case 0 : strcpy(s,"vbap gains"); break;
+			case 1 : strcpy(s,"panning angle azimuth"); break;
+			case 2 : strcpy(s,"panning angle elevation"); break;
+			case 3 : strcpy(s,"spread amount"); break;
+			case 4 : strcpy(s,"gain control"); break;
 		}
 	}
-	strcpy(s,mess);
 }
 
 /* above are the prototypes for the methods/procedures/functions you will use */
@@ -128,16 +126,16 @@ void *vbap_new(double azi,double ele)
 {
 	t_vbap *x = (t_vbap *) object_alloc((t_class*) (vbap_class));
 
-	floatin(x,4);	
-	floatin(x,3);
-	floatin(x,2);
-	floatin(x,1);
+	inlet_new(x,"float");
+    inlet_new(x,"float");
+    inlet_new(x,"float");
+    inlet_new(x,"float");
 
-	x->x_outlet4 = floatout(x);
-	x->x_outlet3 = floatout(x);
-	x->x_outlet2 = floatout(x);
-	x->x_outlet1 = floatout(x);
-	x->x_outlet0 = listout(x);
+	outlet_new(x,"float");
+    outlet_new(x,"float");
+    outlet_new(x,"float");
+    outlet_new(x,"float");
+    outlet_new(x,"list");
 	
 	x->x_spread_base[0] = 0.0;
 	x->x_spread_base[1] = 1.0;
