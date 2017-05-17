@@ -113,7 +113,28 @@ int C74_EXPORT main(void)
     
 }
 
-void vbap_float(t_vbap *x, double n) { object_post((t_object*)x, "received float"); }
+void vbap_float(t_vbap *x, double n) {
+    switch (proxy_getinlet((t_object *)x)) {
+        case 0:
+            object_post((t_object*)x, "inlet 0");
+            break;
+        case 1:
+            object_post((t_object*)x, "inlet 1");
+            break;
+        case 2:
+            object_post((t_object*)x, "inlet 2");
+            break;
+        case 3:
+            object_post((t_object*)x, "inlet 3");
+            break;
+        case 4:
+            object_post((t_object*)x, "inlet 4");
+            break;
+        default:
+            object_post((t_object*)x, "inlet unknown");
+            break;
+    }
+}
 
 /*--------------------------------------------------------------------------*/
 // panning angle azimuth
@@ -135,11 +156,11 @@ void vbap_ft4(t_vbap *x, double g) { x->x_gain = g; }
 void *vbap_new(double azi,double ele)
 {
 	t_vbap *x = (t_vbap *) object_alloc((t_class*) (vbap_class));
-
-	inlet_new(x,NULL);
-    inlet_new(x,NULL);
-    inlet_new(x,NULL);
-    inlet_new(x,NULL);
+    
+    x->x_proxy = proxy_new((t_object *)x, 4, &x->x_in); // initialize proxy 4
+    x->x_proxy = proxy_new((t_object *)x, 3, &x->x_in); // initialize proxy 3
+    x->x_proxy = proxy_new((t_object *)x, 2, &x->x_in); // initialize proxy 2
+    x->x_proxy = proxy_new((t_object *)x, 1, &x->x_in); // initialize proxy 1
 
 	outlet_new(x,"float");
     outlet_new(x,"float");

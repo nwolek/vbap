@@ -74,6 +74,8 @@ typedef struct t_ls_set
 		t_object x_ob;
 		double x_azi; 	// panning direction azimuth
 		double x_ele;		// panning direction elevation
+        long x_in;          // space for the inlet number used by all the proxies
+        void *x_proxy;      // proxy for tracking which outlet received a given message
 		void *x_outlet0;				/* outlet creation - inlets are automatic */
 		void *x_outlet1;				
 		void *x_outlet2;				
