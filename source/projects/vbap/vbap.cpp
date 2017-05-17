@@ -25,6 +25,7 @@ void vect_cross_prod(float v1[3], float v2[3],float v3[3]);
 void additive_vbap(float *final_gs, float cartdir[3], t_vbap *x);
 void vbap_bang(t_vbap *x);
 void vbap_matrix(t_vbap *x, t_symbol *s, int ac, t_atom *av);
+void vbap_float(t_vbap *x, double n);
 void vbap_in1(t_vbap *x, long n);
 void vbap_ft1(t_vbap *x, double n);
 void vbap_in2(t_vbap *x, long n);
@@ -83,6 +84,7 @@ int C74_EXPORT main(void)
     c = class_new("vbap", (method)vbap_new, 0L, (short)sizeof(t_vbap), 0L, A_DEFLONG,A_DEFLONG, 0);
 
 	class_addmethod(c, (method)vbap_bang, "bang", 0);
+    class_addmethod(c, (method)vbap_float, "float", A_LONG, 0);
 	class_addmethod(c, (method)vbap_in1, "in1", A_LONG, 0);
     class_addmethod(c, (method)vbap_ft1, "ft1", A_FLOAT, 0);
     class_addmethod(c, (method)vbap_in2, "in2", A_LONG, 0);
@@ -111,6 +113,8 @@ int C74_EXPORT main(void)
     
 }
 
+void vbap_float(t_vbap *x, double n) { object_post((t_object*)x, "received float"); }
+
 /*--------------------------------------------------------------------------*/
 // panning angle azimuth
 void vbap_in1(t_vbap *x, long n) { x->x_azi = n; }
@@ -132,10 +136,10 @@ void *vbap_new(double azi,double ele)
 {
 	t_vbap *x = (t_vbap *) object_alloc((t_class*) (vbap_class));
 
-	inlet_new(x,"float");
-    inlet_new(x,"float");
-    inlet_new(x,"float");
-    inlet_new(x,"float");
+	inlet_new(x,NULL);
+    inlet_new(x,NULL);
+    inlet_new(x,NULL);
+    inlet_new(x,NULL);
 
 	outlet_new(x,"float");
     outlet_new(x,"float");
