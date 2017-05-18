@@ -132,20 +132,16 @@ void vbap_float(t_vbap *x, double n) {
 void vbap_int(t_vbap *x, long l) {
     switch (proxy_getinlet((t_object *)x)) {
         case 1:
-            object_post((t_object*)x, "inlet 1");
+            //object_post((t_object*)x, "inlet 1");
             vbap_set_azimuth(x, (double)l);
             break;
         case 2:
-            object_post((t_object*)x, "inlet 2");
+            //object_post((t_object*)x, "inlet 2");
             vbap_set_elevation(x, (double)l);
             break;
         case 3:
-            object_post((t_object*)x, "inlet 3");
+            //object_post((t_object*)x, "inlet 3");
             vbap_set_spread(x, (double)l);
-            break;
-        case 4:
-            object_post((t_object*)x, "inlet 4");
-            vbap_set_gain(x, (double)l);
             break;
         default:
             object_error((t_object*)x, "inlet does not accept int");
@@ -155,15 +151,12 @@ void vbap_int(t_vbap *x, long l) {
 
 /*--------------------------------------------------------------------------*/
 // panning angle azimuth
-//void vbap_in1(t_vbap *x, long n) { x->x_azi = n; }
 void vbap_set_azimuth(t_vbap *x, double n) { x->x_azi = n; }
 /*--------------------------------------------------------------------------*/
 // panning angle elevation
-//void vbap_in2(t_vbap *x, long n) { x->x_ele = n; }
 void vbap_set_elevation(t_vbap *x, double n) { x->x_ele = n; }
 /*--------------------------------------------------------------------------*/
 // spread amount
-//void vbap_in3(t_vbap *x, long n) { x->x_spread = (n<0) ? 0 : (n>100) ? 100 : n; }
 void vbap_set_spread(t_vbap *x, double n) { x->x_spread = (n<0.0) ? 0.0 : (n>100.0) ? 100.0 : n; }
 /*--------------------------------------------------------------------------*/
 // gain control
