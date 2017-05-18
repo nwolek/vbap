@@ -179,11 +179,11 @@ void *vbap_new(double azi,double ele)
     x->x_proxy = proxy_new((t_object *)x, 2, &x->x_in); // initialize proxy 2
     x->x_proxy = proxy_new((t_object *)x, 1, &x->x_in); // initialize proxy 1
 
-	outlet_new(x,"float");
-    outlet_new(x,"float");
-    outlet_new(x,"float");
-    outlet_new(x,"float");
-    outlet_new(x,"list");
+    x->x_outlet4 = outlet_new(x,"float");
+    x->x_outlet3 = outlet_new(x,"float");
+    x->x_outlet2 = outlet_new(x,"float");
+    x->x_outlet1 = outlet_new(x,"float");
+    x->x_outlet0 = outlet_new(x,"list");
 	
 	x->x_spread_base[0] = 0.0;
 	x->x_spread_base[1] = 1.0;
