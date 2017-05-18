@@ -20,5 +20,5 @@
 	},
 	"tags" : [ "surround", "multichannel" ],
 	"version" : "@GIT_VERSION_MAJ@.@GIT_VERSION_MIN@.@GIT_VERSION_SUB@",
-	"website" : "http://www.github.com/nwolek"
+	"website" : "http://www.github.com/nwolek/vbap"
 }
