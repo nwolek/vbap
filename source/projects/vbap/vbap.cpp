@@ -26,6 +26,7 @@ void additive_vbap(float *final_gs, float cartdir[3], t_vbap *x);
 void vbap_bang(t_vbap *x);
 void vbap_matrix(t_vbap *x, t_symbol *s, int ac, t_atom *av);
 void vbap_float(t_vbap *x, double n);
+void vbap_int(t_vbap *x, long l);
 void vbap_set_azimuth(t_vbap *x, double n);
 void vbap_set_elevation(t_vbap *x, double n);
 void vbap_set_spread(t_vbap *x, double n);
@@ -82,6 +83,7 @@ int C74_EXPORT main(void)
 
 	class_addmethod(c, (method)vbap_bang, "bang", 0);
     class_addmethod(c, (method)vbap_float, "float", A_FLOAT, 0);
+    class_addmethod(c, (method)vbap_int, "int", A_LONG, 0);
 	class_addmethod(c, (method)vbap_matrix, "loudspeaker-matrices", A_GIMME, 0);
 	class_addmethod(c, (method)traces, "enabletrace", A_LONG, 0);
 
@@ -123,6 +125,30 @@ void vbap_float(t_vbap *x, double n) {
             break;
         default:
             object_error((t_object*)x, "inlet does not accept float");
+            break;
+    }
+}
+
+void vbap_int(t_vbap *x, long l) {
+    switch (proxy_getinlet((t_object *)x)) {
+        case 1:
+            object_post((t_object*)x, "inlet 1");
+            vbap_set_azimuth(x, (double)l);
+            break;
+        case 2:
+            object_post((t_object*)x, "inlet 2");
+            vbap_set_elevation(x, (double)l);
+            break;
+        case 3:
+            object_post((t_object*)x, "inlet 3");
+            vbap_set_spread(x, (double)l);
+            break;
+        case 4:
+            object_post((t_object*)x, "inlet 4");
+            vbap_set_gain(x, (double)l);
+            break;
+        default:
+            object_error((t_object*)x, "inlet does not accept int");
             break;
     }
 }
