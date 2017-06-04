@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="vbap" category="Spatialization">
+	<digest>
+		Vector-based amplitude panning
+	</digest>
+	<description>
+		Use vbap to calculate matrix~-formatted gain factors for adjacent speakers, using constant power panning law
+	</description>
+	
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">
+			Ville Pulkki
+		</metadata>
+		<metadata name="author">
+			Nathan Wolek
+		</metadata>
+		<metadata name="tag">
+			MSP
+		</metadata>
+		<metadata name="tag">
+			Spatialization
+		</metadata>
+		<metadata name="tag">
+			spat
+		</metadata>
+		<metadata name="tag">
+			Multichannel
+		</metadata>
+	</metadatalist>
+	
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="list">
+			<digest>
+				Speaker index followed by gain factor
+			</digest>
+			<description>
+				TEXT_HERE
+			</description>
+		</inlet>
+		<inlet id="1" type="float">
+			<digest>
+				Panning angle azimuth
+			</digest>
+			<description>
+				TEXT_HERE
+			</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<!-- <outletlist>
+		<outlet id="0" type="signal">
+			<digest>
+				(signal) Sine Output
+			</digest>
+			<description>
+				TEXT_HERE
+			</description>
+		</outlet>
+	</outletlist>
+	 -->
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg id="0" name="azimuth" type="int" optional="1">
+			<digest>
+				Default azimuth value
+			</digest>
+			<description>
+				Default azimuth value
+			</description>
+		</objarg>
+		<objarg id="1" name="elevation" type="int" optional="1">
+			<digest>
+				Default elevation value
+			</digest>
+			<description>
+				Default elevation value
+			</description>
+		</objarg>
+	</objarglist>
+	
+	
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="bang">
+			<arglist />
+			<digest>
+				Trigger gain factors calculation
+			</digest>
+			<description>
+				A <m>bang</m> at vbap's input will calculate gain factors given current azimuth, elevation, spread and gain values
+			</description>
+		</method>
+		<method name="define_loudspeakers">
+			<arglist />
+			<digest>
+				Trigger gain factors calculation
+			</digest>
+			<description>
+				A <m>bang</m> at vbap's input will calculate gain factors given current azimuth, elevation, spread and gain values
+			</description>
+		</method>
+
+		<method name="enabletrace">
+			<arglist />
+			<digest>
+				Trigger gain factors calculation
+			</digest>
+			<description>
+				A <m>bang</m> at vbap's input will calculate gain factors given current azimuth, elevation, spread and gain values
+			</description>
+		</method>
+
+		<method name="loudspeaker-matrices">
+			<arglist />
+			<digest>
+				Trigger gain factors calculation
+			</digest>
+			<description>
+				A <m>bang</m> at vbap's input will calculate gain factors given current azimuth, elevation, spread and gain values
+			</description>
+		</method>
+		<method name="ls-directions">
+			<arglist />
+			<digest>
+				Trigger gain factors calculation
+			</digest>
+			<description>
+				A <m>bang</m> at vbap's input will calculate gain factors given current azimuth, elevation, spread and gain values
+			</description>
+		</method>
+		<method name="ls-triplets">
+			<arglist />
+			<digest>
+				Trigger gain factors calculation
+			</digest>
+			<description>
+				A <m>bang</m> at vbap's input will calculate gain factors given current azimuth, elevation, spread and gain values
+			</description>
+		</method>
+
+
+
+	</methodlist>
+
+
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="pan4S~" />
+		<seealso name="M4L.pan1~" />
+		<seealso name="matrix~" />
+	</seealsolist>
+	
+	
+	<misc name="Output">
+		<entry name="list">
+			<description>
+When receiving a <m>bang</m> at its input, <o>vbap</o> outputs <o>matrix~</o>—formatted pairs of speaker index and gain factor 			
+			</description>
+		</entry>
+	</misc>
+</c74object>
