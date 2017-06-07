@@ -38,7 +38,7 @@
 	<inletlist>
 		<inlet id="0" type="list">
 			<digest>
-				Speaker index followed by gain factor
+				A <m>bang</m> at vbap's input will calculate gain factors given current azimuth, elevation, spread and gain values
 			</digest>
 			<description>
 				TEXT_HERE
@@ -55,34 +55,34 @@
 	</inletlist>
 
 	<!--OUTLETS-->
-	<!-- <outletlist>
+	<outletlist>
 		<outlet id="0" type="signal">
 			<digest>
-				(signal) Sine Output
+				Speaker index followed by gain factor
 			</digest>
 			<description>
-				TEXT_HERE
+				When receiving a bang at its inlet, vbap will output <o>matrix~</o>-formatted array of speaker index followed by gain factor.
 			</description>
 		</outlet>
 	</outletlist>
-	 -->
+
 	
 	<!--ARGUMENTS-->
 	<objarglist>
 		<objarg id="0" name="azimuth" type="int" optional="1">
 			<digest>
-				Default azimuth value
+				Default source azimuth value
 			</digest>
 			<description>
-				Default azimuth value
+				Default source azimuth value
 			</description>
 		</objarg>
 		<objarg id="1" name="elevation" type="int" optional="1">
 			<digest>
-				Default elevation value
+				Default source elevation value
 			</digest>
 			<description>
-				Default elevation value
+				Default source elevation value
 			</description>
 		</objarg>
 	</objarglist>
@@ -96,59 +96,57 @@
 				Trigger gain factors calculation
 			</digest>
 			<description>
-				A <m>bang</m> at vbap's input will calculate gain factors given current azimuth, elevation, spread and gain values
+				A <m>bang</m> at vbap's input will calculate gain factors given current source's azimuth, elevation, spread and gain values
 			</description>
 		</method>
 		<method name="define_loudspeakers">
 			<arglist />
 			<digest>
-				Trigger gain factors calculation
+				<m>define_loudspeakers</m> followed by the number of dimensions (2 or 3) and list of speakers azimuth sets speaker setup
 			</digest>
 			<description>
-				A <m>bang</m> at vbap's input will calculate gain factors given current azimuth, elevation, spread and gain values
+				<m>define_loudspeakers</m> followed by the number of dimensions (2 or 3) and list of speakers azimuth sets speaker setup. 
+				<ul>
+					<br/><li>For 2D setups, speakers position are defined with an array of speakers azimuth value (in degrees)</li><li>For 3D setups, speakers position are defined with an array of speakers azimuth and elevation values (in degrees)</li>
+				</ul>
 			</description>
 		</method>
 
 		<method name="enabletrace">
 			<arglist />
 			<digest>
-				Trigger gain factors calculation
+				Enable posting a notification in Max console when vbap is properly set up
 			</digest>
-			<description>
-				A <m>bang</m> at vbap's input will calculate gain factors given current azimuth, elevation, spread and gain values
-			</description>
+			<description/>
+
 		</method>
 
 		<method name="loudspeaker-matrices">
 			<arglist />
 			<digest>
-				Trigger gain factors calculation
+				To be documented
 			</digest>
-			<description>
-				A <m>bang</m> at vbap's input will calculate gain factors given current azimuth, elevation, spread and gain values
-			</description>
+			<description/>
 		</method>
 		<method name="ls-directions">
 			<arglist />
 			<digest>
-				Trigger gain factors calculation
+				<m>define_loudspeakers</m> followed by the number of dimensions (2 or 3) and list of speakers azimuth sets (without causing output) speaker setup
 			</digest>
 			<description>
-				A <m>bang</m> at vbap's input will calculate gain factors given current azimuth, elevation, spread and gain values
+				<m>ls-directions</m> followed by the number of dimensions (2 or 3) and list of speakers azimuth sets (without causing output) speaker setup. 				<ul>
+					<br/><li>For 2D setups, speakers position are defined with an array of speakers azimuth value (in degrees)</li><li>For 3D setups, speakers position are defined with an array of speakers azimuth and elevation values (in degrees)</li>
+				</ul>
+
 			</description>
 		</method>
 		<method name="ls-triplets">
 			<arglist />
 			<digest>
-				Trigger gain factors calculation
+				Sets user-defined triads of speakers used by vbap for 3D gain factors calculation
 			</digest>
-			<description>
-				A <m>bang</m> at vbap's input will calculate gain factors given current azimuth, elevation, spread and gain values
-			</description>
+			<description/>
 		</method>
-
-
-
 	</methodlist>
 
 
