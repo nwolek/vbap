@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 303.0, 98.0, 1092.0, 845.0 ],
+		"rect" : [ 100.0, 100.0, 1092.0, 845.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -1318,7 +1318,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 179.0, 147.333344, 90.0, 22.0 ],
+					"patching_rect" : [ 160.0, 147.333344, 158.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1328,7 +1328,7 @@
 					}
 ,
 					"style" : "",
-					"text" : "p \"Simple GUI\"",
+					"text" : "p \"Using spread parameter\"",
 					"varname" : "Basic[1]"
 				}
 
@@ -1638,7 +1638,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 329.0, 147.333344, 115.0, 22.0 ],
+					"patching_rect" : [ 325.0, 147.333344, 115.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1730,7 +1730,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 303.0, 124.0, 1092.0, 819.0 ],
+						"rect" : [ 100.0, 126.0, 1092.0, 819.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1795,8 +1795,8 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 637.0, 479.666626, 165.6129, 54.0 ],
-									"presentation_rect" : [ 778.0, 378.0, 165.6129, 54.0 ]
+									"patching_rect" : [ 637.0, 479.0, 165.6129, 54.0 ],
+									"presentation_rect" : [ 637.0, 479.0, 165.6129, 54.0 ]
 								}
 
 							}
@@ -1810,7 +1810,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 595.863342, 305.166687, 62.0, 35.0 ],
-									"presentation_rect" : [ 702.0, 339.166687, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "Gain \n(0. - 1.)",
 									"textcolor" : [ 0.6, 0.6, 0.6, 1.0 ],
@@ -1828,7 +1827,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 510.228149, 305.166687, 57.0, 35.0 ],
-									"presentation_rect" : [ 428.516663, 382.666687, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "Spread (0 - 100)",
 									"textcolor" : [ 0.6, 0.6, 0.6, 1.0 ],
@@ -1846,7 +1844,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 414.966553, 305.166687, 77.0, 35.0 ],
-									"presentation_rect" : [ 377.516663, 351.666687, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "Elevation\n (in degrees)",
 									"textcolor" : [ 0.6, 0.6, 0.6, 1.0 ],
@@ -1864,7 +1861,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 325.200012, 305.166687, 80.800003, 35.0 ],
-									"presentation_rect" : [ 128.516663, 623.666687, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "Azimuth \n(in degrees)",
 									"textcolor" : [ 0.6, 0.6, 0.6, 1.0 ],
@@ -1882,7 +1878,6 @@
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 612.599976, 537.5, 50.0, 22.0 ],
-									"presentation_rect" : [ 571.5, 589.5, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -1897,7 +1892,6 @@
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 525.099976, 537.5, 50.0, 22.0 ],
-									"presentation_rect" : [ 508.0, 591.5, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -1910,7 +1904,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "float" ],
 									"patching_rect" : [ 600.676575, 392.0, 31.0, 22.0 ],
-									"presentation_rect" : [ 523.0, 510.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "t b f"
 								}
@@ -1924,7 +1917,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "float" ],
 									"patching_rect" : [ 513.035889, 392.0, 31.0, 22.0 ],
-									"presentation_rect" : [ 471.5, 490.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "t b f"
 								}
@@ -1938,7 +1930,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "float" ],
 									"patching_rect" : [ 425.796265, 392.0, 31.0, 22.0 ],
-									"presentation_rect" : [ 410.5, 447.5, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "t b f"
 								}
@@ -1967,7 +1958,6 @@
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 437.599976, 537.5, 50.0, 22.0 ],
-									"presentation_rect" : [ 450.899994, 610.5, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -1982,7 +1972,6 @@
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 350.099976, 537.5, 50.0, 22.0 ],
-									"presentation_rect" : [ 383.5, 602.5, 0.0, 0.0 ],
 									"style" : ""
 								}
 
