@@ -1,0 +1,24 @@
+{
+	"author" : "Nathan Wolek",
+	"description" : "Legacy objects for Vector Based Amplitude Panning in Max.",
+	"homepatcher" : "vbap.maxhelp",
+	"max_version_min" : "7.1",
+	"name" : "VBAP",
+	"os" : {
+		"macintosh" : {
+			"platform" : [ "ia32", "x64" ],
+			"min_version" : "none"
+		},
+		"windows" : {
+			"platform" : [ "ia32", "x64" ],
+			"min_version" : "none"
+		}
+	},
+	"package_extra" : { 
+		"reverse_domain" : "com.nathanwolek",
+		"copyright" : "Copyright © 2017, Nathan Wolek. CC-BY-SA."
+	},
+	"tags" : [ "surround", "multichannel" ],
+	"version" : "@GIT_VERSION_MAJ@.@GIT_VERSION_MIN@.@GIT_VERSION_SUB@",
+	"website" : "http://www.github.com/nwolek/vbap"
+}
