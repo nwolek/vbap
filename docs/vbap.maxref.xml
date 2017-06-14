@@ -152,10 +152,8 @@
 
 	<!--SEEALSO-->
 	<seealsolist>
-		<seealso name="pan4S~" />
-		<seealso name="M4L.pan1~" />
 		<seealso name="matrix~" />
-		<seealso name="Demo vbap in action"/>
+		<seealso name="gain~" />
 	</seealsolist>
 	
 	
