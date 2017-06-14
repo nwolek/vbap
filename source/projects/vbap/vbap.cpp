@@ -79,7 +79,7 @@ int C74_EXPORT main(void)
 {
     t_class *c;
     
-    c = class_new("vbap", (method)vbap_new, 0L, (short)sizeof(t_vbap), 0L, A_DEFLONG,A_DEFLONG, 0);
+    c = class_new("vbap", (method)vbap_new, 0L, (short)sizeof(t_vbap), 0L, A_DEFFLOAT,A_DEFFLOAT, 0);
 
 	class_addmethod(c, (method)vbap_bang, "bang", 0);
     class_addmethod(c, (method)vbap_float, "float", A_FLOAT, 0);

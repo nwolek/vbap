@@ -18,11 +18,11 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleLongVersionString</key>
-	<string>define_loudspeakers .. - Copyright © 2017, Nathan Wolek. CC-BY-SA.</string>
+	<string>define_loudspeakers 1.1.beta2 - Copyright © 2017, Nathan Wolek. CC-BY-SA.</string>
 	<key>CFBundlePackageType</key>
 	<string>iLaX</string>
 	<key>CFBundleShortVersionString</key>
-	<string>..</string>
+	<string>1.1.beta2</string>
 	<key>CFBundleSignature</key>
 	<string>max2</string>
 	<key>CFBundleSupportedPlatforms</key>
@@ -30,7 +30,7 @@
 		<string>MacOSX</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>..</string>
+	<string>1.1.beta2</string>
 	<key>CSResourcesFileMapped</key>
 	<true/>
 	<key>DTCompiler</key>
