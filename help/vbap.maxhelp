@@ -54,7 +54,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1038.0, 709.0 ],
+						"rect" : [ 65.0, 107.0, 1038.0, 709.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -84,66 +84,29 @@
 						"showontab" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
-									"bubble" : 1,
-									"bubbletextmargin" : 10,
-									"fontname" : "Lato Regular",
-									"fontsize" : 12.0,
-									"id" : "obj-11",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 505.5, 577.166687, 125.0, 35.0 ],
-									"style" : "",
-									"text" : "Top square gains",
-									"textcolor" : [ 0.3, 0.3, 0.3, 1.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bubble" : 1,
-									"bubbletextmargin" : 10,
-									"fontname" : "Lato Regular",
-									"fontsize" : 12.0,
-									"id" : "obj-5",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 459.5, 665.666687, 145.0, 35.0 ],
-									"style" : "",
-									"text" : "Bottom square gains",
-									"textcolor" : [ 0.3, 0.3, 0.3, 1.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"candycane" : 6,
-									"ghostbar" : 60,
-									"id" : "obj-1",
-									"maxclass" : "multislider",
+									"hidden" : 1,
+									"id" : "obj-50",
+									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
-									"outlettype" : [ "", "" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 308.599976, 556.166687, 180.0, 77.0 ],
-									"setminmax" : [ 0.0, 1.0 ],
-									"size" : 4,
-									"style" : ""
+									"outlettype" : [ "float", "bang" ],
+									"patching_rect" : [ 736.5, 65.0, 37.0, 22.0 ],
+									"style" : "",
+									"text" : "t 1. b"
 								}
 
 							}
 , 							{
 								"box" : 								{
 									"hidden" : 1,
-									"id" : "obj-32",
+									"id" : "obj-15",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 657.599976, 349.0, 75.0, 22.0 ],
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 736.5, 33.5, 60.0, 22.0 ],
 									"style" : "",
-									"text" : "loadmess 1."
+									"text" : "loadbang"
 								}
 
 							}
@@ -156,10 +119,10 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 595.863342, 305.166687, 62.0, 35.0 ],
+									"patching_rect" : [ 708.507568, 260.833344, 62.0, 35.0 ],
 									"style" : "",
 									"text" : "Gain \n(0. - 1.)",
-									"textcolor" : [ 0.6, 0.6, 0.6, 1.0 ],
+									"textcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 									"textjustification" : 1
 								}
 
@@ -173,10 +136,10 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 510.228149, 305.166687, 57.0, 35.0 ],
+									"patching_rect" : [ 622.872314, 260.833344, 57.0, 35.0 ],
 									"style" : "",
 									"text" : "Spread (0 - 100)",
-									"textcolor" : [ 0.6, 0.6, 0.6, 1.0 ],
+									"textcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 									"textjustification" : 1
 								}
 
@@ -190,10 +153,10 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 414.966553, 305.166687, 77.0, 35.0 ],
+									"patching_rect" : [ 527.610718, 260.833344, 77.0, 35.0 ],
 									"style" : "",
 									"text" : "Elevation\n (in degrees)",
-									"textcolor" : [ 0.6, 0.6, 0.6, 1.0 ],
+									"textcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 									"textjustification" : 1
 								}
 
@@ -207,10 +170,10 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 325.200012, 305.166687, 80.800003, 35.0 ],
+									"patching_rect" : [ 437.844208, 260.833344, 80.800003, 35.0 ],
 									"style" : "",
 									"text" : "Azimuth \n(in degrees)",
-									"textcolor" : [ 0.6, 0.6, 0.6, 1.0 ],
+									"textcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 									"textjustification" : 1
 								}
 
@@ -222,7 +185,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "float" ],
-									"patching_rect" : [ 600.676575, 392.0, 31.0, 22.0 ],
+									"patching_rect" : [ 713.320801, 338.666656, 31.0, 22.0 ],
 									"style" : "",
 									"text" : "t b f"
 								}
@@ -235,7 +198,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "float" ],
-									"patching_rect" : [ 513.035889, 392.0, 31.0, 22.0 ],
+									"patching_rect" : [ 625.680054, 338.666656, 31.0, 22.0 ],
 									"style" : "",
 									"text" : "t b f"
 								}
@@ -248,7 +211,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "float" ],
-									"patching_rect" : [ 425.796265, 392.0, 31.0, 22.0 ],
+									"patching_rect" : [ 538.44043, 338.666656, 31.0, 22.0 ],
 									"style" : "",
 									"text" : "t b f"
 								}
@@ -261,7 +224,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "float" ],
-									"patching_rect" : [ 337.553894, 392.0, 31.0, 22.0 ],
+									"patching_rect" : [ 450.19809, 338.666656, 31.0, 22.0 ],
 									"style" : "",
 									"text" : "t b f"
 								}
@@ -274,7 +237,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 262.599976, 448.0, 24.0, 24.0 ],
+									"patching_rect" : [ 374.599976, 360.666656, 24.0, 24.0 ],
 									"style" : ""
 								}
 
@@ -290,7 +253,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 600.676575, 349.0, 50.0, 22.0 ],
+									"patching_rect" : [ 713.320801, 304.666656, 50.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -306,7 +269,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 513.035889, 349.0, 50.0, 22.0 ],
+									"patching_rect" : [ 625.680054, 304.666656, 50.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -320,7 +283,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 425.796265, 349.0, 50.0, 22.0 ],
+									"patching_rect" : [ 538.44043, 304.666656, 50.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -336,7 +299,76 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 337.553894, 349.0, 50.0, 22.0 ],
+									"patching_rect" : [ 450.19809, 304.666656, 50.0, 22.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"angle" : 270.0,
+									"bgcolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+									"id" : "obj-39",
+									"maxclass" : "panel",
+									"mode" : 0,
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 429.566681, 256.666656, 349.0, 77.0 ],
+									"proportion" : 0.39,
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bubble" : 1,
+									"bubbletextmargin" : 10,
+									"fontname" : "Lato Regular",
+									"fontsize" : 12.0,
+									"id" : "obj-11",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 713.320801, 491.166687, 138.0, 49.0 ],
+									"style" : "",
+									"text" : "Gains for elevated square visualized.",
+									"textcolor" : [ 0.3, 0.3, 0.3, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bubble" : 1,
+									"bubbleside" : 3,
+									"bubbletextmargin" : 10,
+									"fontname" : "Lato Regular",
+									"fontsize" : 12.0,
+									"id" : "obj-5",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 43.666656, 491.166687, 155.0, 49.0 ],
+									"style" : "",
+									"text" : "Gains for lowered square visualized.",
+									"textcolor" : [ 0.3, 0.3, 0.3, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"candycane" : 6,
+									"ghostbar" : 60,
+									"id" : "obj-1",
+									"maxclass" : "multislider",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 469.007111, 491.166687, 244.0, 135.0 ],
+									"setminmax" : [ 0.0, 1.0 ],
+									"size" : 4,
 									"style" : ""
 								}
 
@@ -350,10 +382,10 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 262.599976, 173.0, 268.0, 35.0 ],
+									"patching_rect" : [ 295.610718, 147.5, 309.0, 35.0 ],
 									"style" : "",
-									"text" : "A setup of 8 speakers organized as 2 squares (one up and one down the listening area)",
-									"textcolor" : [ 0.6, 0.6, 0.6, 1.0 ]
+									"text" : "This message defines 8 speakers organized as 2 squares, one elevated and one lowered in the listening area.",
+									"textcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ]
 								}
 
 							}
@@ -365,7 +397,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 262.599976, 221.0, 343.0, 35.0 ],
+									"patching_rect" : [ 275.599976, 186.5, 343.0, 35.0 ],
 									"style" : "",
 									"text" : "define_loudspeakers 3 -45 -45 45 -45 135 -45 -135 -45 -45 45 45 45 135 45 -135 45"
 								}
@@ -388,7 +420,7 @@
 											"modernui" : 1
 										}
 ,
-										"rect" : [ 783.0, 313.0, 640.0, 480.0 ],
+										"rect" : [ 766.0, 313.0, 640.0, 480.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -688,7 +720,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 262.599976, 520.666687, 65.0, 22.0 ],
+									"patching_rect" : [ 375.320801, 441.666687, 79.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -698,7 +730,7 @@
 									}
 ,
 									"style" : "",
-									"text" : "p reformat"
+									"text" : "p reformat44"
 								}
 
 							}
@@ -712,7 +744,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 262.599976, 644.666687, 180.0, 77.0 ],
+									"patching_rect" : [ 200.666656, 491.166687, 241.0, 135.0 ],
 									"setminmax" : [ 0.0, 1.0 ],
 									"size" : 4,
 									"style" : ""
@@ -727,9 +759,9 @@
 									"numinlets" : 5,
 									"numoutlets" : 5,
 									"outlettype" : [ "list", "float", "float", "float", "float" ],
-									"patching_rect" : [ 262.599976, 479.666626, 369.0, 22.0 ],
+									"patching_rect" : [ 375.320801, 410.666626, 368.812347, 22.0 ],
 									"style" : "",
-									"text" : "vbap 0 0"
+									"text" : "vbap 0. 0."
 								}
 
 							}
@@ -741,13 +773,13 @@
 									"fontname" : "Lato Regular",
 									"fontsize" : 12.0,
 									"id" : "obj-37",
-									"linecount" : 5,
+									"linecount" : 9,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 21.5, 183.0, 236.0, 92.0 ],
+									"patching_rect" : [ 12.0, 129.0, 258.0, 150.0 ],
 									"style" : "",
-									"text" : "For 3D speaker setups, the message 'define_loudspeakers' followed by 3 (number of dimensions) expects pairs of values corresponding to each loudspeaker azimuth and elevation",
+									"text" : "In 3D setups (define_loudspeakers 3), the speakers' positions are set using pairs of values. Each pair corresponds to the azimuth and elevation for a single speaker position. \n\nIn this case, the number of list items must be twice the number of speakers in your setup.",
 									"textcolor" : [ 0.3, 0.3, 0.3, 1.0 ]
 								}
 
@@ -781,6 +813,14 @@
 								"patchline" : 								{
 									"destination" : [ "obj-33", 4 ],
 									"source" : [ "obj-10", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-50", 0 ],
+									"hidden" : 1,
+									"source" : [ "obj-15", 0 ]
 								}
 
 							}
@@ -829,16 +869,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-33", 0 ],
-									"midpoints" : [ 272.099976, 463.333313, 272.099976, 463.333313 ],
 									"source" : [ "obj-30", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-28", 0 ],
-									"hidden" : 1,
-									"source" : [ "obj-32", 0 ]
 								}
 
 							}
@@ -846,6 +877,22 @@
 								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
 									"source" : [ "obj-33", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-28", 0 ],
+									"hidden" : 1,
+									"source" : [ "obj-50", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-8", 0 ],
+									"hidden" : 1,
+									"source" : [ "obj-50", 1 ]
 								}
 
 							}
@@ -880,7 +927,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-33", 0 ],
-									"midpoints" : [ 272.099976, 292.833313, 272.099976, 292.833313 ],
+									"midpoints" : [ 285.099976, 398.083313, 384.820801, 398.083313 ],
 									"source" : [ "obj-8", 0 ]
 								}
 
@@ -1016,13 +1063,13 @@
 									"fontname" : "Lato Regular",
 									"fontsize" : 12.0,
 									"id" : "obj-41",
-									"linecount" : 2,
+									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 451.0, 117.0, 146.0, 49.0 ],
+									"patching_rect" : [ 451.0, 117.0, 179.0, 64.0 ],
 									"style" : "",
-									"text" : "Set a speakers configuration (6 or 4)",
+									"text" : "Specify a configuration with 6 or 4 equally-spaced speakers",
 									"textcolor" : [ 0.3, 0.3, 0.3, 1.0 ]
 								}
 
@@ -1086,7 +1133,7 @@
 											"modernui" : 1
 										}
 ,
-										"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
+										"rect" : [ 59.0, 104.0, 640.0, 480.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -1211,7 +1258,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 227.0, 590.666687, 53.0, 22.0 ],
+									"patching_rect" : [ 254.0, 625.666687, 53.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -2627,7 +2674,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 65.0, 107.0, 1038.0, 709.0 ],
+						"rect" : [ 0.0, 26.0, 1038.0, 709.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2656,6 +2703,22 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"fontname" : "Lato Regular",
+									"fontsize" : 12.0,
+									"id" : "obj-21",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 294.610718, 146.5, 261.020691, 35.0 ],
+									"style" : "",
+									"text" : "This message defines 8 speakers equally spaced around the listening area.",
+									"textcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"hidden" : 1,
 									"id" : "obj-50",
@@ -2913,8 +2976,8 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 823.0, 450.0, 176.488373, 54.0 ],
-									"presentation_rect" : [ 823.0, 450.0, 176.488373, 54.0 ]
+									"patching_rect" : [ 823.0, 450.0, 100.0, 24.0 ],
+									"presentation_rect" : [ 823.0, 450.0, 100.0, 24.0 ]
 								}
 
 							}
@@ -3220,7 +3283,7 @@
 											"modernui" : 1
 										}
 ,
-										"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
+										"rect" : [ 59.0, 104.0, 640.0, 480.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -3505,13 +3568,13 @@
 									"fontname" : "Lato Regular",
 									"fontsize" : 12.0,
 									"id" : "obj-37",
-									"linecount" : 9,
+									"linecount" : 10,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 32.599976, 134.0, 250.0, 150.0 ],
+									"patching_rect" : [ 32.599976, 134.0, 242.0, 164.0 ],
 									"style" : "",
-									"text" : "Specify the number of dimensions (2 or 3) and layout of your speakers using the define_loudspeakers message.\n\nIn 2D setup (define_loudspeakers 2), the speakers' positions are set as a list of azimuth values. The number of list items must match the number of speakers in your setup.",
+									"text" : "Specify the number of dimensions (2 or 3) and layout of your speakers using the define_loudspeakers message.\n\nIn 2D setups (define_loudspeakers 2), the speakers' positions are set as a list of azimuth values. \n\nThe number of list items must match the number of speakers in your setup.",
 									"textcolor" : [ 0.3, 0.3, 0.3, 1.0 ]
 								}
 
