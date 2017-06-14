@@ -5,11 +5,11 @@
 			"major" : 7,
 			"minor" : 3,
 			"revision" : 4,
-			"architecture" : "x64",
+			"architecture" : "x86",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 244.0, 111.0, 1092.0, 845.0 ],
+		"rect" : [ 96.0, 79.0, 1092.0, 845.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -50,11 +50,11 @@
 							"major" : 7,
 							"minor" : 3,
 							"revision" : 4,
-							"architecture" : "x64",
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 244.0, 137.0, 1092.0, 819.0 ],
+						"rect" : [ 0.0, 26.0, 1092.0, 819.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -93,7 +93,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 505.5, 577.166687, 125.0, 35.0 ],
-									"presentation_rect" : [ 521.5, 542.666687, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "Top square gains",
 									"textcolor" : [ 0.3, 0.3, 0.3, 1.0 ]
@@ -111,7 +110,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 459.5, 665.666687, 145.0, 35.0 ],
-									"presentation_rect" : [ 459.5, 647.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "Bottom square gains",
 									"textcolor" : [ 0.3, 0.3, 0.3, 1.0 ]
@@ -129,7 +127,6 @@
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 308.599976, 556.166687, 180.0, 77.0 ],
-									"presentation_rect" : [ 552.599976, 575.666687, 0.0, 0.0 ],
 									"setminmax" : [ 0.0, 1.0 ],
 									"size" : 4,
 									"style" : ""
@@ -387,7 +384,7 @@
 											"major" : 7,
 											"minor" : 3,
 											"revision" : 4,
-											"architecture" : "x64",
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -426,7 +423,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 151.0, 271.0, 39.0, 22.0 ],
-													"presentation_rect" : [ 151.0, 271.0, 0.0, 0.0 ],
 													"style" : "",
 													"text" : "join 2"
 												}
@@ -453,7 +449,6 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 151.0, 206.0, 59.0, 22.0 ],
-													"presentation_rect" : [ 151.0, 206.0, 0.0, 0.0 ],
 													"style" : "",
 													"text" : "unjoin"
 												}
@@ -467,7 +462,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 151.0, 312.5, 89.0, 22.0 ],
-													"presentation_rect" : [ 151.0, 312.5, 0.0, 0.0 ],
 													"style" : "",
 													"text" : "prepend select"
 												}
@@ -495,7 +489,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 151.0, 380.5, 30.0, 30.0 ],
-													"presentation_rect" : [ 156.0, 379.5, 0.0, 0.0 ],
 													"style" : ""
 												}
 
@@ -928,7 +921,6 @@
 					}
 ,
 					"patching_rect" : [ 175.0, 146.333344, 79.0, 22.0 ],
-					"presentation_rect" : [ 175.0, 146.333344, 0.0, 0.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -955,7 +947,7 @@
 							"major" : 7,
 							"minor" : 3,
 							"revision" : 4,
-							"architecture" : "x64",
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -1090,7 +1082,7 @@
 											"major" : 7,
 											"minor" : 3,
 											"revision" : 4,
-											"architecture" : "x64",
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -1259,7 +1251,7 @@
 											"major" : 7,
 											"minor" : 3,
 											"revision" : 4,
-											"architecture" : "x64",
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -1502,7 +1494,7 @@
 											"major" : 7,
 											"minor" : 3,
 											"revision" : 4,
-											"architecture" : "x64",
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -1765,7 +1757,7 @@
 											"major" : 7,
 											"minor" : 3,
 											"revision" : 4,
-											"architecture" : "x64",
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -2250,7 +2242,7 @@
 							"major" : 7,
 							"minor" : 3,
 							"revision" : 4,
-							"architecture" : "x64",
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -2569,7 +2561,7 @@
 							"major" : 7,
 							"minor" : 3,
 							"revision" : 4,
-							"architecture" : "x64",
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -2631,11 +2623,11 @@
 							"major" : 7,
 							"minor" : 3,
 							"revision" : 4,
-							"architecture" : "x64",
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1092.0, 819.0 ],
+						"rect" : [ 96.0, 105.0, 1092.0, 819.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2685,7 +2677,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 262.599976, 212.0, 290.0, 22.0 ],
-									"presentation_rect" : [ 262.599976, 228.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "define_loudspeakers 2 0 45 90 135 180 -135 -90 -45"
 								}
@@ -2728,8 +2719,8 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 637.0, 477.0, 165.6129, 54.0 ],
-									"presentation_rect" : [ 637.0, 479.0, 165.6129, 54.0 ]
+									"patching_rect" : [ 637.0, 477.0, 100.0, 24.0 ],
+									"presentation_rect" : [ 637.0, 477.0, 100.0, 24.0 ]
 								}
 
 							}
@@ -3011,7 +3002,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 281.0, 241.0, 271.599976, 35.0 ],
+									"patching_rect" : [ 281.0, 241.0, 273.0, 35.0 ],
 									"style" : "",
 									"text" : "Speaker azimuth can be expressed from 0 to 360° or -180 to 180°",
 									"textcolor" : [ 0.6, 0.6, 0.6, 1.0 ]
@@ -3044,7 +3035,7 @@
 											"major" : 7,
 											"minor" : 3,
 											"revision" : 4,
-											"architecture" : "x64",
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -3318,9 +3309,9 @@
 									"numinlets" : 5,
 									"numoutlets" : 5,
 									"outlettype" : [ "list", "float", "float", "float", "float" ],
-									"patching_rect" : [ 262.599976, 477.666626, 369.0, 22.0 ],
+									"patching_rect" : [ 262.599976, 477.666626, 369.392578, 22.0 ],
 									"style" : "",
-									"text" : "vbap 0 0"
+									"text" : "vbap 0. 0."
 								}
 
 							}
@@ -3520,7 +3511,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-12", 0 ],
-									"midpoints" : [ 272.099976, 581.666656, 630.099976, 581.666656 ],
+									"midpoints" : [ 272.099976, 581.666626, 630.099976, 581.666626 ],
 									"order" : 0,
 									"source" : [ "obj-33", 0 ]
 								}
@@ -3551,7 +3542,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
-									"midpoints" : [ 272.099976, 581.666656, 441.099976, 581.666656 ],
+									"midpoints" : [ 272.099976, 581.666626, 441.099976, 581.666626 ],
 									"order" : 1,
 									"source" : [ "obj-33", 0 ]
 								}
@@ -3732,6 +3723,10 @@
 			}
 , 			{
 				"name" : "vbap.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "define_loudspeakers.mxo",
 				"type" : "iLaX"
 			}
  ],

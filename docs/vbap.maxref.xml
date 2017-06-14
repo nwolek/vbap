@@ -69,7 +69,7 @@
 	
 	<!--ARGUMENTS-->
 	<objarglist>
-		<objarg id="0" name="azimuth" type="int" optional="1">
+		<objarg id="0" name="azimuth" type="float" optional="1">
 			<digest>
 				Default source azimuth value
 			</digest>
@@ -77,7 +77,7 @@
 				Default source azimuth value
 			</description>
 		</objarg>
-		<objarg id="1" name="elevation" type="int" optional="1">
+		<objarg id="1" name="elevation" type="float" optional="1">
 			<digest>
 				Default source elevation value
 			</digest>
