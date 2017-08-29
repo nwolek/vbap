@@ -7,7 +7,15 @@ Legacy objects for Vector Based Amplitude Panning in Max authored by [Ville Pull
 
 ## About
 
-More here.
+This GitHub project is a [package for Cycling74's Max](https://cycling74.com/2013/03/11/max-6-feature-packages/), versions 6.1 or higher. It provides newly compiled, 64-bit versions of Ville Pullki's objects for vector-based amplitude panning that were originally developed in 1998.
+
+Vector-based amplitude panning is a technique for spatializing sound across multiple loudspeakers. It is flexible enough to define an arbitrary number of speakers in 2D or 3D space. After speaker positions are defined, the user can move a single sound source through the configuration by adjusting its apparent azimuth and elevation.
+
+Additional resources:  
+- [AES paper on VBAP](http://lib.tkk.fi/Diss/2001/isbn9512255324/article1.pdf) by Ville Pullki, published originally in 1997 by Journal of the Audio Engineering Society  
+- [Legacy website for research group](http://legacy.spa.aalto.fi/research/cat/vbap/) at Helsinki University of Technology  
+- Distinct implementation of [VBAP for PD](https://github.com/pierreguillot/vbap) by Pierre Guillot of CICM  
+- [3D Sound Primer](http://www.garykendall.net/papers/3-DPrimer1995.pdf) by Gary Kendall, published originally in 1995 by Computer Music Journal 
 
 ## Installing
 
