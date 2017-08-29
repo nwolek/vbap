@@ -7,7 +7,7 @@
 		Vector-based amplitude panning
 	</digest>
 	<description>
-		Use vbap to calculate matrix~-formatted gain factors for adjacent speakers, using constant power panning law
+		Use vbap to calculate matrix~-formatted gain factors for adjacent speakers, using constant power panning law.
 	</description>
 	
 	
@@ -40,17 +40,31 @@
 			<digest>
 				A <m>bang</m> at vbap's input will calculate gain factors given current azimuth, elevation, spread and gain values
 			</digest>
-			<description>
-				TEXT_HERE
-			</description>
+			<description/>
 		</inlet>
 		<inlet id="1" type="float">
 			<digest>
 				Panning angle azimuth
 			</digest>
-			<description>
-				TEXT_HERE
-			</description>
+			<description/>
+		</inlet>
+		<inlet id="2" type="float">
+			<digest>
+				Panning angle elevation
+			</digest>
+			<description/>
+		</inlet>
+		<inlet id="3" type="float">
+			<digest>
+				Spread amount
+			</digest>
+			<description/>
+		</inlet>
+		<inlet id="4" type="float">
+			<digest>
+				Gain control
+			</digest>
+			<description/>
 		</inlet>
 	</inletlist>
 
@@ -63,6 +77,30 @@
 			<description>
 				When receiving a bang at its inlet, vbap will output <o>matrix~</o>-formatted array of speaker index followed by gain factor.
 			</description>
+		</outlet>
+		<outlet id="1" type="float">
+			<digest>
+				Panning angle azimuth
+			</digest>
+			<description/>
+		</outlet>
+		<outlet id="2" type="float">
+			<digest>
+				Panning angle elevation
+			</digest>
+			<description/>
+		</outlet>
+		<outlet id="3" type="float">
+			<digest>
+				Spread amount
+			</digest>
+			<description/>
+		</outlet>
+		<outlet id="4" type="float">
+			<digest>
+				Gain control
+			</digest>
+			<description/>
 		</outlet>
 	</outletlist>
 
@@ -102,13 +140,10 @@
 		<method name="define_loudspeakers">
 			<arglist />
 			<digest>
-				<m>define_loudspeakers</m> followed by the number of dimensions (2 or 3) and list of speakers azimuth sets speaker setup
+				<m>define_loudspeakers</m> followed by the number of dimensions (2 or 3) and list of azimuth and elevation sets for each speaker will define a new configuration without causing output.
 			</digest>
 			<description>
-				<m>define_loudspeakers</m> followed by the number of dimensions (2 or 3) and list of speakers azimuth sets speaker setup. 
-				<ul>
-					<br/><li>For 2D setups, speakers position are defined with an array of speakers azimuth value (in degrees)</li><li>For 3D setups, speakers position are defined with an array of speakers azimuth and elevation values (in degrees)</li>
-				</ul>
+				<m>define_loudspeakers</m> followed by the number of dimensions (2 or 3) and list of azimuth and elevation sets for each speaker will define a new configuration without causing output. 2D setups only requires azimuth, while 3D setups requires azimuth and elevation pairs. The number of sets should equal the number of speakers in your setup.
 			</description>
 		</method>
 
@@ -124,20 +159,17 @@
 		<method name="loudspeaker-matrices">
 			<arglist />
 			<digest>
-				To be documented
+				Specially formatted message from the <o>define_loudspeakers</o> object that defines the internal distribution matrix for a given speaker configuration.
 			</digest>
 			<description/>
 		</method>
 		<method name="ls-directions">
 			<arglist />
 			<digest>
-				<m>define_loudspeakers</m> followed by the number of dimensions (2 or 3) and list of speakers azimuth sets (without causing output) speaker setup
+				See <m>define_loudspeakers</m>
 			</digest>
 			<description>
-				<m>ls-directions</m> followed by the number of dimensions (2 or 3) and list of speakers azimuth sets (without causing output) speaker setup. 				<ul>
-					<br/><li>For 2D setups, speakers position are defined with an array of speakers azimuth value (in degrees)</li><li>For 3D setups, speakers position are defined with an array of speakers azimuth and elevation values (in degrees)</li>
-				</ul>
-
+				The <m>ls-directions</m> message must be formatted similar to the <m>define_loudspeakers</m> message. See documentation there for details.
 			</description>
 		</method>
 		<method name="ls-triplets">
