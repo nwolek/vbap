@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="vbap" category="Spatialization">
+	<digest>
+		Configure speakers for vector-based amplitude panning 
+	</digest>
+	<description>
+		Use define_loudspeakers to compute a distribution matrix for multiple vbap objects.
+	</description>
+	
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">
+			Ville Pulkki
+		</metadata>
+		<metadata name="author">
+			Nathan Wolek
+		</metadata>
+		<metadata name="tag">
+			MSP
+		</metadata>
+		<metadata name="tag">
+			Spatialization
+		</metadata>
+		<metadata name="tag">
+			spat
+		</metadata>
+		<metadata name="tag">
+			Multichannel
+		</metadata>
+	</metadatalist>
+	
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="list">
+			<digest>
+				A <m>bang</m> will calculate a new loudspeaker-matrices given the current loudspeaker position settings.
+			</digest>
+			<description/>
+		</inlet>
+		
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="message">
+			<digest>
+				The <m>loudspeaker-matrices</m> message is specially formatted for the <o>vbap</o> object.
+			</digest>
+			<description/>
+		</outlet>
+	</outletlist>
+
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg id="0" name="dimensions" type="int" optional="0">
+			<digest>
+				Number of dimensions (2 or 3)
+			</digest>
+			<description>
+				Number of dimensions in your speaker configuration (2 or 3)
+			</description>
+		</objarg>
+		<objarg id="1" name="azimuth-elevation-list" type="float" optional="1">
+			<digest>
+				List of azimuth and elevation sets.
+			</digest>
+			<description>
+				List of azimuth and elevation sets to define your speaker configurations. 2D setups only requires azimuth, while 3D setups requires azimuth and elevation pairs. The number of sets should equal the number of speakers in your setup.
+			</description>
+		</objarg>
+	</objarglist>
+	
+	
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="bang">
+			<arglist />
+			<digest>
+				Calculate new loudspeaker-matrices
+			</digest>
+			<description>
+				A <m>bang</m> at define_loudspeakers's input will calculate a new configuration for the current loudspeaker position settings, then output the results as a <m>loudspeaker-matrices</m> message for the <o>vbap</o> object.  
+			</description>
+		</method>
+		
+		<method name="ls-directions">
+			<arglist />
+			<digest>
+				<m>ls-directions</m> followed by the number of dimensions (2 or 3) and list of azimuth and elevation sets for each speaker will define a new configuration without causing output.
+			</digest>
+			<description>
+				<m>ls-directions</m> followed by the number of dimensions (2 or 3) and list of azimuth and elevation sets for each speaker will define a new configuration without causing output. 2D setups only requires azimuth, while 3D setups requires azimuth and elevation pairs. The number of sets should equal the number of speakers in your setup.
+			</description>
+		</method>
+		<method name="ls-triplets">
+			<arglist />
+			<digest>
+				Sets user-defined triads of speakers used by vbap for 3D gain factors calculation.
+			</digest>
+			<description/>
+		</method>
+		
+		<method name="enabletrace">
+			<arglist />
+			<digest>
+				Enable posting a notification in Max console when vbap is properly set up
+			</digest>
+			<description/>
+
+		</method>
+	</methodlist>
+
+
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="vbap" />
+		<seealso name="matrix~" />
+		<seealso name="gain~" />
+	</seealsolist>
+	
+	
+	<misc name="Output">
+		<entry name="list">
+			<description>
+When receiving a <m>bang</m> at its input, <o>define_loudspeakers</o> outputs a <m>loudspeaker-matrices</m> message for the <o>vbap</o> object  			
+			</description>
+		</entry>
+	</misc>
+</c74object>
